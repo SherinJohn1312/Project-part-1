@@ -21,14 +21,14 @@ const User = require('../models/User');
 
 exports.index = async (req, res) => {
   try {
-    const resources = await Resource
+    const resource = await Resource
       .find()
       .populate('user')
       .sort({updatedAt: 'desc'});
 
     res.render(`${viewPath}/index`, {
       pageTitle: 'Archive',
-      resources: resources
+      resources: resource
     });
   } catch (error) {
     req.flash('danger', `There was an error displaying the archive: ${error}`);
