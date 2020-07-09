@@ -1,4 +1,4 @@
-const { new: _new, index, show, create, edit, update, delete: _delete } = require('../controllers/ResourcesController');
+const { new: _new, index, show, create, edit, update, delete: _delete } = require('../controllers/ResourceController');
 
 function auth (req, res, next) {
   if (!req.isAuthenticated()) {

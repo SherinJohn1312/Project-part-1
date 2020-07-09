@@ -18,7 +18,6 @@
 const viewPath = 'resources';
 const Resource = require('../models/Resource');
 const User = require('../models/User');
-const resources = require('../routes/resources');
 
 exports.index = async (req, res) => {
   try {
