@@ -31,23 +31,26 @@ const ResourceSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['DRAFT', 'PUBLISHED'],
-    default: 'DRAFT'
+    enum: ['single ','king','queen' ],
+    default: 'king'
   }
-}, {
+},
+
+
+{
   timestamps: true
 });
 
 // Query Helpers
 ResourceSchema.query.drafts = function () {
   return this.where({
-    status: 'DRAFT'
+    status: 'king'
   })
 };
 
 ResourceSchema.query.published = function () {
   return this.where({
-    status: 'PUBLISHED'
+    status: 'queen'
   })
 };
 
