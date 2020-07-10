@@ -1,5 +1,6 @@
 const { new: _new, index, show, create, edit, update, delete: _delete } = require('../controllers/ResourceController');
 
+
 function auth (req, res, next) {
   if (!req.isAuthenticated()) {
     req.flash('danger', 'You need to login first.');
@@ -7,6 +8,7 @@ function auth (req, res, next) {
   }
   next();
 }
+
 
 module.exports = router => {
   router.get('/resources', index); // public
@@ -17,3 +19,5 @@ module.exports = router => {
   router.get('/resources/:id/edit', auth, edit);  // authenticated
   router.get('/resources/:id', show); // public
 };
+
+

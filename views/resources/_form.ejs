@@ -2,7 +2,7 @@
   Step 1: The form must be sharable between the new and edit views.
 -->
 
-<form action="<%= (typeof actionPath === 'undefined') ? '/' : actionPath %>", method="POST">
+<form action="<%= (typeof actionPath === 'undefined') ? '/resources' : actionPath %>", method="POST">
   <% if (typeof actionPath !== 'undefined') { %>
     <input type="hidden" name="id" value="<%= formData.id %>">
   <% } %>
